@@ -175,7 +175,7 @@
                     </a>
                 </div>
             </section>
-            <audio id="backsound" src="music/ASSHOLATU 'ALANNABI.mp3"></audio>
+            <audio src="music/ASSHOLATU 'ALANNABI.mp3"></audio>
 
             <section class="position-relative overflow-x-hidden home " id="home">
                 <img src="img/animate/bunga-1.png" alt="decoration" width="75%" class="position-absolute z-2  " style="top: -2%; right: -2%;">
@@ -341,17 +341,12 @@
         function enableScroll() {
           document.body.style.overflow = 'auto';
         }
-        function playMusic() {
-            const audio = document.getElementById('backsound');
-            audio.play();
-        }
     
         // Ketika tombol "Lihat Undangan" ditekan, scroll diaktifkan dan scroll ke undangan
         document.getElementById('see-invitation').addEventListener('click', function() {
           // Aktifkan scroll
           enableScroll();
-          playMusic()
-        
+    
           // Scroll ke bagian undangan dengan animasi halus
           window.scrollTo({
             top: document.getElementById('home').offsetTop,
