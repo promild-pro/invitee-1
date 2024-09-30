@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Undangan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css"/>
+
+    <link rel="stylesheet" href="style.css">
+
+    
+    <style>
+        /* Gaya default untuk warning */
+        .warning {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+        }
+        .opened{
+            display: none;
+        }
+        /* .opened ::after{
+            display: -w;
+        } */
+
+        .warning .container{
+            border: 2px solid #9999;
+            padding: 0;
+            width: 50%;
+            border-radius: 20px;
+        }
+        .warning .container >h1{
+            padding: 10px;
+            border-top-left-radius: 20px ;
+            border-top-right-radius: 20px;
+            background-color: rgb(255, 187, 0);
+        }
+        .warning .container >p{
+            font-weight: 400;
+            font-size: 2rem;
+            padding: 20px;
+
+        }
+
+        .animate-O {
+            opacity: 0;
+            transform:  translateY(20px);
+            /* transition: opacity 2s ease, transform 2s ease; */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+        }
+        .animate-O.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Konten undangan untuk mobile -->
+    <main class="opened" id="opened">
+        <main class="d-grid w-100 ">
+            <section class="text-center overflow-x-hidden bg-opened ">
+                <p>Wedding of</p>
+                <h2>Zain & Isna</h2>
+                <div class="position-relative z-2 text-white row justify-content-center ">
+                    <p>Kepada Yth.</p>
+                    <h4 class="people-invite">Tamu Undangan</h4>
+                    <p>Di Tempat</p>
+                    <a href="#home" onclick="onNavbar()" id="see-invitation" class="d-flex w-50 mt-2 justify-content-center btn btn-open ">
+                        <i class="bi bi-envelope-open"></i>
+                        <h5 class="ps-4">Lihat Undangan</h5>
+                    </a>
+                </div>
+            </section>
+
+            
+            <section class="home position-relative" id="home">
+                <!-- <div class="navbar fixed-bottom">navbar</div> -->
+                <div class="header border-0"></div>
+                <div class="container position-relative">
+                    <div class="couple-bride row justify-content-around">
+                        <div class="text-center opening animate-O">
+                            <h3>Acara Pernikahan</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam.</p>
+                        </div>
+                        <img src="img/sepasang-pengantin.jpeg" alt="sepasang pengantin">
+                        <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+                             pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa
+                              tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.
+                               Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+                            <br>QS Ar-Rum: 21
+                        </p>
+                    </div>
+                    <div class="bride d-flex justify-content-around align-items-center">
+                        <img src="img/pengantin.jpeg" alt="cewek"">
+                        <div class="w-50 text-center">
+                            <h3>Isna Ayu muarofah</h3>
+                            <p>Putri dari <br /> Bapak Lorem <br> ibu ipsum</p>
+                        </div>
+                    </div>
+                    <div class="bride d-flex justify-content-around align-items-center">
+                        <div class="w-50 text-center">
+                            <h3>Muhamad Zain</h3>
+                            <p>Putri dari <br /> Bapak Ipsum <br> ibu Lorem</p>
+                        </div>
+                        <img src="img/pengantin.jpg" alt="cowok"">
+                    </div>
+                    <div class="d-grid mt-5 ">
+                        <div class="save-date d-flex justify-content-center">
+                            <span>Save Date</span>
+                        </div>
+                        <div class="date d-flex justify-content-center align-items-center mt-3 ">
+                            <h3 class="">Minggu 22 Oktober 2025</h3>
+                        </div>
+                        <div class="simply-countdown d-flex justify-content-center align-content-center"></div>
+                        <p style="color: rgb(114, 160, 7); text-align: center; margin-top: -1px;">08.00 -selesai</p>
+                    </div>
+                </div>
+                <img src="img/decoration.png" alt="decoration" width="100%" class="position-absolute" >
+            </section>
+
+            <section class="info" id="info">
+                <div class="row justify-content-center m-0">
+                    <div class="container col-10">
+                        <div class="info-acara">
+                            <h3>Informasi Acara</h3>
+                            <div>
+                                <h6 style="font-weight: bold; font-size: 1.5rem; padding: 2px;">Akad</h6>
+                                <p>Dilaksanakan pada pukul 08.00 di 
+                                    Jl. Basuki Rahmat No.93-105, Embong Kaliasin, Kec. Genteng, Surabaya, Jawa Timur 60271
+                                </p>
+                                <a href="https://maps.app.goo.gl/iHw9rRPteLLF63EN7" class="btn bg-white rounded-1 mb-5">View location</a>
+                            </div>
+                            <div>
+                                <h6 style="font-weight: bold;  font-size: 1.5rem; padding: 2px;">Resepsi</h6>
+                                <p>Dilaksanakan pada pukul 08.00 di 
+                                    Jl. Basuki Rahmat No.93-105, Embong Kaliasin, Kec. Genteng, Surabaya, Jawa Timur 60271
+                                </p>
+                                <a href="" class="btn bg-white rounded-1 mb-5">View location</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+         
+            <section class="galery" id="galeri">
+                <div class="row m-0">
+                    <h3 class="text-center my-4" style="font-family: 'sacramento' ; font-size: 2rem; font-weight: bold;">Galery</h3>
+                    <div class="container d-flex flex-wrap justify-content-center align-items-center">
+                        <div class="col-6 d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade1.jpg" alt="prewade1" class="object-fit-cover  rounded-3  " width="100%">
+                        </div>
+                        <div class="col-6  d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade2.jpg" alt="prewade1" class="object-fit-cover rounded-3 " width="100%">
+                        </div>
+                        <div class="col-6  d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade3.jpg" alt="prewade1" class="object-fit-cover rounded-3  " width="100%">
+                        </div>
+                        <div class="col-6  d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade4.jpeg" alt="prewade1" class="object-fit-cover  rounded-3 " width="100%">
+                        </div>
+                        <div class="col-6 d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade1.jpg" alt="prewade1" class="object-fit-cover  rounded-3  " width="100%">
+                        </div>
+                        <div class="col-6  d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade2.jpg" alt="prewade1" class="object-fit-cover rounded-3 " width="100%">
+                        </div>
+                        <div class="col-6  d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade3.jpg" alt="prewade1" class="object-fit-cover rounded-3  " width="100%">
+                        </div>
+                        <div class="col-6  d-flex justify-content-center p-1" style="height: 10rem;">
+                            <img src="img/galeri/prewade4.jpeg" alt="prewade1" class="object-fit-cover  rounded-3 " width="100%">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="gift" id="gift">
+                <div class="row m-0">
+                    <div class="container">
+                        <h3 class="text-center my-4" style="font-family: 'sacramento' ; font-size: 2rem; font-weight: bold;">Gift</h3>
+                        <div class="border border-2 border-secondary-subtle p-5 rounded-3" style="background-color: rgb(64, 90, 3, 0.1);">
+                            <p class="text-center px-2 lh-1">Doa restu Anda adalah hadiah yang paling berarti bagi kami. Namun, jika Anda ingin memberikan lebih, dengan penuh syukur kami menerimanya. Terima kasih atas doa, cinta, dan kebaikan hati Anda.</p>
+                            <ul class="text-center" style="list-style: none;">
+                                <li>Bank BCA : <span id="no-rek">086678555</span> a. n. Zain</li>
+                                <button onclick="CopyToClipboard()" class="btn text-light " style="background-color: rgb(64, 90, 3, 0.8);">Salin</button>
+                                <p id="message-succes" class="text-success" style="display: none;">No Rekenig Berhasil disalin</p>
+                                <li>Bank BCA : 086678555 a. n. Isna</li>
+                                <button onclick="CopyToClipboard()" class="btn text-light " style="background-color: rgb(64, 90, 3, 0.8);">Salin</button>
+                                <!-- <p id="message-succes" class="text-success" style="display: none;">No Rekenig Berhasil disalin</p> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="navbar sticky-bottom bg-body-tertiary " id="stickyNavbar" style="display: none;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Sticky bottom</a>
+                </div>
+              </nav>
+
+        </main>
+    </main>
+    
+
+    <!-- Konten peringatan untuk desktop/tablet -->
+    <div class="warning">
+        <div class="container">
+            <h1>Warning !</h1>
+            <p>Mohon maaf, undangan digital ini tidak tersedia untuk Laptop atau Tablet. 
+               Silakan buka undangan ini melalui perangkat handphone <span><i class="bi bi-emoji-tear"></i></span>
+            </p>
+        </div>
+    </div>
+    <!-- see Invitation -->
+<script>
+        window.addEventListener('load', function() {
+            document.body.style.overflow = 'hidden'
+          window.scrollTo(0, 0); // Scroll ke atas (koordinat 0,0)
+        });
+    
+        // Fungsi untuk mengaktifkan scroll setelah tombol ditekan
+        function enableScroll() {
+          document.body.style.overflow = 'auto';
+        }
+    
+        // Ketika tombol "Lihat Undangan" ditekan, scroll diaktifkan dan scroll ke undangan
+        document.getElementById('see-invitation').addEventListener('click', function() {
+          // Aktifkan scroll
+          enableScroll();
+    
+          // Scroll ke bagian undangan dengan animasi halus
+          window.scrollTo({
+            top: document.getElementById('home').offsetTop,
+            behavior: 'smooth'
+          });
+        });
+    
+        </script>
+    <!-- script responsive -->
+    <script>
+        if (window.innerWidth >= 768) {
+        // Jika layar lebih besar dari 768px (desktop/tablet), tampilkan warning
+        document.querySelector('.warning').style.display = 'flex';
+        document.querySelector('.opened').style.display = 'none';
+    } else {
+        // Jika layar lebih kecil dari 768px (mobile), tampilkan undangan
+        document.querySelector('.warning').style.display = 'none';
+        document.querySelector('.opened').style.display = 'block';
+    }
+
+    // Event listener untuk mengantisipasi perubahan ukuran layar
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+            document.querySelector('.warning').style.display = 'block';
+            document.querySelector('.opened').style.display = 'none';
+        } else {
+            document.querySelector('.warning').style.display = 'none';
+            document.querySelector('.opened').style.display = 'block';
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="countdown/simplyCountdown.min.js"></script>
+    <!-- <script></script> -->
+    <script>
+        simplyCountdown('.simply-countdown', {
+            year: 2025, // required
+            month: 10, // required
+            day: 25, // required
+            hours: 0, // Default is 0 [0-23] integer
+            minutes: 0, // Default is 0 [0-59] integer
+            seconds: 0, // Default is 0 [0-59] integer
+            words: { //words displayed into the countdown
+                days: { singular: 'day', plural: 'Hari' },
+                hours: { singular: 'hour', plural: 'Jam' },
+                minutes: { singular: 'minute', plural: 'Menit' },
+                seconds: { singular: 'second', plural: 'Detik' }
+            },
+    });
+    </script>
+
+    <!-- copy Rekening -->
+     <script>
+        function CopyToClipboard() {
+            const Rekening = document.getElementById('no-rek').textContent
+            navigator.clipboard.writeText(Rekening).then(() =>{
+                const message = document.getElementById('message-succes')
+                message.style.display = 'block';
+
+                setTimeout(() => {
+                   message.style.display = 'none' 
+                }, 3000);
+            }).catch((err) => {
+                console.error('Gagal menyalin teks: ', err);
+            });
+        }
+     </script>
+    <!-- Navbar Sticky -->
+     <script>
+        function onNavbar() {
+            const navbar = document.getElementById('stickyNavbar')
+            navbar.style.display = 'block'
+            if(window.pageYOffset === 0) {
+                navbar.style.display = 'none'
+            }
+        }
+        window.onscroll = onNavbar
+
+     </script>
+
+     <!-- Animate muncul  -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const elements = document.querySelectorAll(".animate-O");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+            });
+        });
+
+        elements.forEach(el => observer.observe(el));
+        });
+     </script>
+</body>
+</html>

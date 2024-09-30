@@ -1,0 +1,10 @@
+/* .home1 >img{
+    width: 80%;
+    border: 1px solid #fffefe;
+} */
+ .parent-home >h2{
+    font-family: "Sacramento", cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 2px;
+ }

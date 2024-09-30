@@ -1,0 +1,51 @@
+/* .home1 >img{
+    width: 80%;
+    border: 1px solid #fffefe;
+} */
+ .home1 .row, 
+ .couple .row,
+ .date{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+ }
+ .parent-home, 
+ .parent-couple,
+ .date{
+    border: 2px solid #ffff;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(123, 143, 52,0.5);;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1), 0 0 40px 20px rgba(0, 0, 0, 0.1), 0 0 60px 30px rgba(0, 0, 0, 0.5);
+
+ }
+ .parent-home >h2{
+    font-family: "Sacramento", cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 2px;
+    text-shadow: 2px 2px #ffff;
+ }
+ .parent-home >p{
+   font-size: 1.2rem;
+ }
+ .home1 >p{
+   font-size: 1.2rem;
+   text-align: center;
+   padding: 2rem;
+   background-color: rgb(123, 143, 52,0.5); ;
+ }
+
+ .parent-couple >div >h2{
+   font-family: "Sacramento", cursive;
+   font-size: 2rem ;
+   font-weight: bolder;
+   text-shadow: 2px 2px #ffff;
+   margin-top: 2rem;
+ }
+ .parent-couple >div >p{
+   line-height: 1;
+ }

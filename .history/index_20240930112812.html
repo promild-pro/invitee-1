@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Undangan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css"/>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+        /* style default untuk warning */
+        .warning {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+        }
+        .opened{
+            display: none;
+        }
+        .warning .container{
+            border: 2px solid #9999;
+            padding: 0;
+            width: 50%;
+            border-radius: 20px;
+        }
+        .warning .container >h1{
+            padding: 10px;
+            border-top-left-radius: 20px ;
+            border-top-right-radius: 20px;
+            background-color: rgb(255, 187, 0);
+        }
+        .warning .container >p{
+            font-weight: 400;
+            font-size: 2rem;
+            padding: 20px;
+
+        }
+        .gift-area{
+            /* display: none; */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height  0.7s ease-in-out, opacity 0.3s ease;;
+            padding: 0 20px;
+            background-color: rgb(123, 143, 52,0.4);
+        }
+        .gift-area.show{
+            /* max-height: 100%; */
+            max-height: 500px; 
+            opacity: 1;
+            padding: 20px;
+        }
+        .gift-area >h3{
+            color: #ffffff;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 1px 1px black;
+        }
+        .gift-area >p{
+            color: #ffffff;
+        }
+
+
+
+
+
+        .animate-O {
+            opacity: 0 !important;
+            transform:  translateY(20vh) !important;
+            transition: opacity 1s ease-out, transform 1s ease-out !important;
+            /* overflow-y: hidden; */
+
+        }
+        .animate-O.show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .animate-O:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .animate-O:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .animate-O:nth-child(3) {
+            animation-delay: 2.1s;
+        }
+        .animate-O:nth-child(4) {
+            animation-delay: 2.5s;
+        }
+        .animate-O:nth-child(5) {
+            animation-delay: 3s;
+        }
+        @keyframes floatLeftCorner {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(20px); /* Bergerak naik-turun */
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* Class untuk elemen yang animasinya diikat ke sudut kanan atas */
+    .animate-right {
+        transform-origin: top right; /* Titik referensi di kanan atas */
+        animation: floatLeftCorner 3s ease-in-out infinite; /* Animasi bergerak terus menerus */
+    }
+
+    /* Posisi absolut untuk tetap berada di sudut kanan */
+    .position-absolute {
+        position: absolute;
+        top: -5px;
+        right: 0;
+    }
+        /* .animationLeft {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-out ;
+            transform: translateX(20vh);
+        }
+        .animationRight {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-out ;
+            transform: translateX(20vh);
+        }
+
+        .animationLeft.show, .animationRight.show {
+            opacity: 1 !important;
+            
+            transform: translateX(0) !important;
+        }
+        .animationLeft:nth-child(1),
+        .animationRight:nth-child(1) {
+            transition-delay: 0.5s;
+        }
+
+        .animationLeft:nth-child(2),
+        .animationRight:nth-child(2) {
+            transition-delay: 0.9s;
+        } */
+        #count {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        #count:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Konten undangan untuk mobile -->
+    <main class="opened" id="opened">
+        <main class="d-grid">
+            <section class="text-center overflow-x-hidden bg-opened  ">
+                <p>The Wedding of</p>
+                <img src="img/hero.png" alt="hero" class="w-50 bg-gradient z-2 border border-2 rounded-5">
+                <h2>Yaqin & Safira</h2>
+                <div class="position-relative z-2 text-white row justify-content-center ">
+                    <p>Kepada Yth.</p>
+                    <h4 class="people-invite">Tamu Undangan</h4>
+                    <p>Di Tempat</p>
+                    <a href="#home" onclick="onNavbar()" id="see-invitation" class="d-flex w-50 mt-2 justify-content-center align-items-center btn btn-open ">
+                        <i class="bi bi-envelope-open"></i>
+                        <h6 class="ps-4 m-0">Lihat Undangan</h6>
+                    </a>
+            </div>
+            </section>
+
+            <section class="position-relative overflow-x-hidden home " id="home">
+                <img src="img/animate/bunga1.png" alt="decoration" width="50%" class="position-absolute z-2 animate-right" style="top: -5px; right: 0;">
+                <div class="row">
+                    <div class="container col-10  rounded-5 animate-O  parent-home" >
+                        <h2 class="animate-O">Acara pernikahan</h2>
+                        <p class="animate-O">"Dengan penuh rasa syukur, kami mengundang Anda untuk menjadi bagian dari hari istimewa kami. Doa dan restu Anda menjadi anugerah yang sangat berarti."</p>
+                        <img src="img/img-home.png" alt="img home" width="100%" class="rounded-5 pt-2 animate-O style="border: 2px solid #ffffff;">
+                    </div>
+                </div>
+                <img src="img/animate/bunga2.png" alt="decoration2" width="70%" class="position-absolute z-2 animate-right" style="top: 50%; left: -15%; ">
+                <p class="animate-O">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+                    pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa
+                    tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.
+                    Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+                    <br>QS Ar-Rum: 21</p>
+            </section>
+            
+            <section class="couple position-relative" id="couple">
+                <div class="row ">
+                    <div class="container col-10 rounded-5 animate-O  parent-couple">
+                        <div class="animate-O">
+                            <h2>Ainul Yaqin, S.E </h2>
+                            <p>Putra dari <br> Bapak Nuriyoto <br> dan <br> Ibu Nur Aisyah</p>
+                        </div>
+                        <img src="img/hero.png" alt="img-couple"  width="100%" class="rounded-5 pt-2 animate-O" style="border: 2px solid #ffffff;">
+                        <div class="animate-O">
+                            <h2>Safira Fadlila Aprilia</h2>
+                            <p>Putri dari <br> Bapak H.Anwar <br> dan <br> Ibu Siti Mahfudhotin</p>
+                        </div>
+                    </div>
+                    <div class="position-absolute " style="top: 80%; ">
+                        <div class="d-flex justify-content-between animate-right">
+                            <img src="img/animate/bunga4.png" alt="decoration3" width="" class="position-absolute" style="bottom: 0; width: 90%; transform: scaleX(-1);">
+                            <img src="img/animate/bunga4.png" alt="decoration3" width="" class="position-absolute" style="bottom: 0; width: 90%;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="date" id="date">
+                <div class="row">
+                    <div class="container col-10 rounded-5 animate-O  date-chill">
+                        <div class="my-5 animate-O">
+                            <div>
+                                <span>
+                                    Save Date
+                                </span>
+                            </div>
+                            <h2 class="animate-O">Kamis, 10 Oktober 2024</h2>
+                            <div class="simply-countdown d-flex justify-content-center align-content-center animate-O"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="acara" id="acara">
+                <div class="row m-0">
+                    <div class="container col-10 animate-O  acara-info">
+                        <h2 class="animate-O">Informasi Acara</h2>
+                        <div class="akad-info animate-O">
+                            <h2>Akad</h2>
+                            <div class="d-flex justify-content-center align-items-center text-white fst-italic" style="font-weight: bold;">
+                                <h3 style="border-right: 2px solid #ffffff; padding:1rem;  font-size: 2rem; font-weight: bold;">Minggu</h3>
+                                <div style="padding: 1rem;  font-size: 2rem ; font-weight: bold;">
+                                    <h3 id="count1" style="  font-size: 2rem ; font-weight: bold;">1</h3>
+                                    <h3 style="  font-size: 2rem ; font-weight: bold;">Okt</h3>
+                                </div>
+                                <h3 style="border-left: 2px solid #ffffff; padding:1rem;  font-size: 2rem; font-weight: bold;">2024</h3>
+                            </div>
+                            <i class="bi bi-geo-alt" ></i>
+                            <p>Acara Akad Nikah diselenggarakan <br> di Desa Bulaklo kec.balen <br>kab.Bojonegoro </p>
+                            <a href="" class="btn btn-light rounded-2 p-2 mb-5">view location</a>
+                        </div>
+                        <div class="resepsi-info animate-O">
+                            <h2>Resepsi</h2>
+                            <div class="d-flex justify-content-center align-items-center text-white fst-italic" style="font-weight: bold;">
+                                <h3 style="border-right: 2px solid #ffffff; padding:1rem;  font-size: 2rem; font-weight: bold;">Minggu</h3>
+                                <div style="padding: 1rem;  font-size: 2rem ; font-weight: bold;">
+                                    <h3 id="count2" style="  font-size: 2rem ; font-weight: bold;">1</h3>
+                                    <h3 style="  font-size: 2rem ; font-weight: bold;">Okt</h3>
+                                </div>
+                                <h3 style="border-left: 2px solid #ffffff; padding:1rem;  font-size: 2rem; font-weight: bold;">2024</h3>
+                            </div>
+                            <i class="bi bi-geo-alt" ></i>
+                            <p>Acara Akad Nikah diselenggarakan <br> di Desa Bulaklo kec.balen <br>kab.Bojonegoro </p>
+                            <a href="" class="btn btn-light rounded-2 p-2 mb-5">view location</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="gift" id="gift">
+                <div class="row m-0">
+                    <div class="container col-10 rounded-5 animate-O   gift-acara ">
+                        <!-- <div> -->
+                            <h2 class="animate-O">Gift</h2>
+                            <p class="animate-O">Doa restu Anda adalah hadiah yang paling berarti bagi kami. Namun,
+                                 jika Anda ingin memberikan lebih, dengan penuh syukur kami menerimanya.
+                                  Terima kasih atas doa, cinta, dan kebaikan hati Anda.
+                            </p>
+                            <button id="GiftButton" class="animate-O" style="background-color: #ffffff; border-radius: 5px; border: none;">Buka</button>
+                            <div id="hiddenContent" class="text-center gift-area" style="border: 1px solid #ffffff; border-radius: 7px; margin: 2rem; padding: 1rem;">
+                                <h3>Bank BCA</h3>
+                                <p><span id="no-rek1">31341421</span> a. n. Ainul Yaqin</p>
+                                <button onclick="CopyToClipboard()"  style="background-color: #ffffff; border-radius: 5px; border: none;">salin</button>
+                                <br>
+                                <h3>Bank BCA</h3>
+                                <p><span id="no-rek1">31341421</span> a. n. Ainul Yaqin</p>
+                                <button onclick="CopyToClipboard()"  style="background-color: #ffffff; border-radius: 5px; border: none;">salin</button>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </section>
+            
+            
+        
+
+            <nav class="navbar sticky-bottom px-1  " id="stickyNavbar" style="display: none; background-color:rgb(123, 143, 52,0.7); color: #ffffff; font-size: 2rem;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#home" style=" color: #ffffff; font-size: 2rem;"><i class="bi bi-house-heart"></i></a>
+                  <a class="navbar-brand" href="#couple"style=" color: #ffffff; font-size: 2rem;"><i class="bi bi-person-hearts"></i></a>
+                  <a class="navbar-brand" href="#date"style=" color: #ffffff; font-size: 2rem;"><i class="bi bi-calendar-heart"></i></a>
+                  <a class="navbar-brand" href="#acara"style=" color: #ffffff; font-size: 2rem;"><i class="bi bi-info-circle"></i></a>
+                  <a class="navbar-brand" href="#gift"style=" color: #ffffff; font-size: 2rem;"><i class="bi bi-gift"></i></a>
+                </div>
+            </nav>
+
+        </main>
+    </main>
+    
+
+    <!-- Konten peringatan untuk desktop/tablet -->
+    <div class="warning">
+        <div class="container">
+            <h1>Warning !</h1>
+            <p>Mohon maaf, undangan digital ini tidak tersedia untuk Laptop atau Tablet. 
+               Silakan buka undangan ini melalui perangkat handphone <span><i class="bi bi-emoji-tear"></i></span>
+            </p>
+        </div>
+    </div>
+    <!-- see Invitation -->
+    <!-- <script>
+        window.addEventListener('load', function() {
+            document.body.style.overflow = 'hidden'
+          window.scrollTo(0, 0); // Scroll ke atas (koordinat 0,0)
+        });
+    
+        // Fungsi untuk mengaktifkan scroll setelah tombol ditekan
+        function enableScroll() {
+          document.body.style.overflow = 'auto';
+        }
+    
+        // Ketika tombol "Lihat Undangan" ditekan, scroll diaktifkan dan scroll ke undangan
+        document.getElementById('see-invitation').addEventListener('click', function() {
+          // Aktifkan scroll
+          enableScroll();
+    
+          // Scroll ke bagian undangan dengan animasi halus
+          window.scrollTo({
+            top: document.getElementById('home').offsetTop,
+            behavior: 'smooth'
+          });
+        });
+    
+    </script> -->
+    <!-- script responsive -->
+    <script>
+        if (window.innerWidth >= 768) {
+        // Jika layar lebih besar dari 768px (desktop/tablet), tampilkan warning
+        document.querySelector('.warning').style.display = 'flex';
+        document.querySelector('.opened').style.display = 'none';
+    } else {
+        // Jika layar lebih kecil dari 768px (mobile), tampilkan undangan
+        document.querySelector('.warning').style.display = 'none';
+        document.querySelector('.opened').style.display = 'block';
+    }
+
+    // Event listener untuk mengantisipasi perubahan ukuran layar
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+            document.querySelector('.warning').style.display = 'block';
+            document.querySelector('.opened').style.display = 'none';
+        } else {
+            document.querySelector('.warning').style.display = 'none';
+            document.querySelector('.opened').style.display = 'block';
+        }
+    });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="countdown/simplyCountdown.min.js"></script>
+    <!-- countdown -->
+    <script>
+        simplyCountdown('.simply-countdown', {
+            year: 2025, // required
+            month: 10, // required
+            day: 25, // required
+            hours: 0, // Default is 0 [0-23] integer
+            minutes: 0, // Default is 0 [0-59] integer
+            seconds: 0, // Default is 0 [0-59] integer
+            words: { //words displayed into the countdown
+                days: { singular: 'day', plural: 'Hari' },
+                hours: { singular: 'hour', plural: 'Jam' },
+                minutes: { singular: 'minute', plural: 'Menit' },
+                seconds: { singular: 'second', plural: 'Detik' }
+            },
+    });
+    </script>
+
+    <!-- copy Rekening -->
+     <script>
+        function CopyToClipboard() {
+            const Rekening = document.getElementById('no-rek').textContent
+            navigator.clipboard.writeText(Rekening).then(() =>{
+                const message = document.getElementById('message-succes')
+                message.style.display = 'block';
+
+                setTimeout(() => {
+                   message.style.display = 'none' 
+                }, 3000);
+            }).catch((err) => {
+                console.error('Gagal menyalin teks: ', err);
+            });
+        }
+     </script>
+    <!-- Navbar Sticky -->
+     <script>
+        function onNavbar() {
+            const navbar = document.getElementById('stickyNavbar')
+            navbar.style.display = 'block'
+            if(window.pageYOffset === 0) {
+                navbar.style.display = 'none'
+            }
+        }
+        window.onscroll = onNavbar
+
+     </script>
+
+     <!-- Animate muncul  -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const elements = document.querySelectorAll(".animate-O, .animationLeft, .animationRight");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+            });
+        },{threshold: 0.1});
+
+        elements.forEach(el => observer.observe(el));
+        });
+     </script>
+
+     <!-- animasi count date -->
+     <script>
+        function animateCountUp(start, end, duration, elementId) {
+            let current = start;
+            const element = document.getElementById(elementId);
+            const increment = (end - start) / (duration / 100); // Menghitung peningkatan per interval
+    
+            const interval = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(interval); // Menghentikan interval saat sudah mencapai angka akhir
+                }
+                element.textContent = Math.floor(current); // Menampilkan angka yang dibulatkan
+            }, 100); // Mengatur interval setiap 100ms (0.1 detik)
+        }
+        function runAnimationOnScroll() {
+            const options = {
+                root: null, // Mengamati elemen dalam viewport
+                threshold: 0.1 // Menjalankan ketika 10% elemen terlihat
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animasi dijalankan ketika elemen terlihat
+                        animateCountUp(1, 10, 1000, "count1"); // Animasi pertama
+                        animateCountUp(1, 30, 1500, "count2"); // Animasi kedua
+                        observer.unobserve(entry.target); // Berhenti mengamati setelah animasi dijalankan
+                    }
+                });
+            }, options);
+
+            // Mengamati elemen dengan ID count1 dan count2
+            const target1 = document.getElementById("count1");
+            const target2 = document.getElementById("count2");
+            observer.observe(target1);
+            observer.observe(target2);
+        }
+
+        // Memulai observer ketika halaman selesai dimuat
+        document.addEventListener("DOMContentLoaded", () => {
+            runAnimationOnScroll();
+        });
+       
+    </script>
+
+    <!-- gift area -->
+     <script>
+        document.getElementById('GiftButton').addEventListener('click', function(){
+            var content = document.getElementById('hiddenContent')
+
+                if (content.classList.contains('show')) {
+                content.classList.remove('show');  // Menyembunyikan konten
+                this.textContent = 'Buka Konten';  // Mengubah teks tombol kembali menjadi "Buka Konten"
+            } else {
+                content.classList.add('show');  // Menampilkan konten
+                this.textContent = 'Tutup Konten';  // Mengubah teks tombol menjadi "Tutup Konten"
+            }
+        })
+     </script>
+</body>
+</html>
