@@ -28,7 +28,7 @@ body{
     background-position: center; */
     /* backdrop-filter: brightness(20%); */
     /* z-index: 2; */
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
 }
 .bg-opened >img{
     z-index: 2;

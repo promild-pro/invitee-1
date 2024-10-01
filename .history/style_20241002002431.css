@@ -10,8 +10,7 @@ body{
     background-image: url(img/b.png);
     background-size: cover; /* Membuat gambar memenuhi seluruh background */
     background-position: center; /* Menempatkan gambar di tengah */
-    background-repeat: no-repeat; 
-    overflow:auto;
+    /* background-repeat: no-repeat;  */
 }
 
 /* .opened{

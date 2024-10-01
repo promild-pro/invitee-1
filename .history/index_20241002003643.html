@@ -230,7 +230,6 @@
                             </div>
                             <h2 class="animate-O">Kamis, 10 Oktober 2024</h2>
                             <div class="simply-countdown d-flex justify-content-center align-content-center animate-O"></div>
-                            <h2 class="mt-2" style="font-size: 2rem; font-weight: bold; color: white;background-color:rgb(106, 124, 38); border-radius: 5px; padding: 0.5rem;">Siang-malam</h2>
                         </div>
                     </div>
                 </div>
@@ -274,22 +273,20 @@
                     </div>
                 </div>
             </section>
-
-            <div class="position-relative z-2 animate-fadeIn " style="bottom:5rem; margin-left: 10%;">
-                <img src="img/animate/bunga-2.png" alt="" class="position-absolute w-75">
-            </div>
-
+            
+            <div class="position-relative animate-fadeIn " style="overflow-x: clip; z-index: -1;">
+                <img src="img/animate/bunga5.png" alt="decoration-3" style="width: 40rem; position: absolute; top: -5rem; right: -10rem;">
+             </div>
             <section class="gift" id="gift">
                 <div class="row m-0">
                     <div class="container col-10 rounded-5 animate-O   gift-acara ">
-                            <!-- <h2 class="animate-O">Gift</h2> -->
-                            <h2 class="animate-O">Doa</h2>
-
+                        <!-- <div> -->
+                            <h2 class="animate-O">Gift</h2>
                             <p class="animate-O">Doa restu Anda adalah hadiah yang paling berarti bagi kami. Namun,
                                  jika Anda ingin memberikan lebih, dengan penuh syukur kami menerimanya.
                                   Terima kasih atas doa, cinta, dan kebaikan hati Anda.
                             </p>
-                            <!-- <button id="GiftButton" class="animate-O" style="background-color: #ffffff; border-radius: 5px; border: none;">Buka</button>
+                            <button id="GiftButton" class="animate-O" style="background-color: #ffffff; border-radius: 5px; border: none;">Buka</button>
                             <div id="hiddenContent" class="text-center gift-area" style="border: 1px solid #ffffff; border-radius: 7px; margin: 2rem; padding: 1rem;">
                                 <h3>Bank BCA</h3>
                                 <p><span id="no-rek1">31341421</span> a. n. Ainul Yaqin</p>
@@ -298,10 +295,11 @@
                                 <h3>Bank BCA</h3>
                                 <p><span id="no-rek1">31341421</span> a. n. Ainul Yaqin</p>
                                 <button onclick="CopyToClipboard()"  style="background-color: #ffffff; border-radius: 5px; border: none;">salin</button>
-                            </div> -->
+                            </div>
+                        <!-- </div> -->
                     </div>
                 </div>
-                <button onclick="togleMute()" class="btn" style="border: none; position: fixed; bottom: 5rem; left: 2rem; z-index: 2;">
+                <button onclick="togleMute()" class="btn" style=" position: fixed; bottom: 5rem; left: 2rem; z-index: 2;">
                     <i class="bi bi-play-circle-fill" style="font-size: 3rem; color: white; "></i>
                 </button>
             </section>
@@ -535,7 +533,7 @@
     </script>
 
     <!-- gift area -->
-     <!-- <script>
+     <script>
         document.getElementById('GiftButton').addEventListener('click', function(){
             var content = document.getElementById('hiddenContent')
 
@@ -547,6 +545,6 @@
                 this.textContent = 'Tutup';  // Mengubah teks tombol menjadi "Tutup Konten"
             }
         })
-     </script> -->
+     </script>
 </body>
 </html>

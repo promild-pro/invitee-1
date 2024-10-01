@@ -161,7 +161,7 @@
     <!-- Konten undangan untuk mobile -->
     <main class="opened" id="opened">
         <main class="d-grid">
-            <section class="text-center overflow-x-hidden d-flex align-items-center z-3 wrap-open" style="height: 100vh; background-color:  rgb(123, 143, 52);">
+            <section class="text-center overflow-x-hidden d-flex align-items-center z-2 wrap-open" style="height: 100vh; background-color:  rgb(123, 143, 52);">
                 <div class="bg-opened">
                     <p>The Wedding of</p>
                 <img src="img/hero.png" alt="hero" class="w-50 bg-gradient z-2 border border-2 rounded-5 ">
@@ -230,7 +230,6 @@
                             </div>
                             <h2 class="animate-O">Kamis, 10 Oktober 2024</h2>
                             <div class="simply-countdown d-flex justify-content-center align-content-center animate-O"></div>
-                            <h2 class="mt-2" style="font-size: 2rem; font-weight: bold; color: white;background-color:rgb(106, 124, 38); border-radius: 5px; padding: 0.5rem;">Siang-malam</h2>
                         </div>
                     </div>
                 </div>
@@ -274,22 +273,20 @@
                     </div>
                 </div>
             </section>
-
-            <div class="position-relative z-2 animate-fadeIn " style="bottom:5rem; margin-left: 10%;">
-                <img src="img/animate/bunga-2.png" alt="" class="position-absolute w-75">
-            </div>
-
+            
+            <div class="position-relative animate-fadeIn " style="overflow-x: clip; z-index: -1;">
+                <img src="img/animate/bunga5.png" alt="decoration-3" style="width: 40rem; position: absolute; top: -5rem; right: -10rem;">
+             </div>
             <section class="gift" id="gift">
                 <div class="row m-0">
                     <div class="container col-10 rounded-5 animate-O   gift-acara ">
-                            <!-- <h2 class="animate-O">Gift</h2> -->
-                            <h2 class="animate-O">Doa</h2>
-
+                        <!-- <div> -->
+                            <h2 class="animate-O">Gift</h2>
                             <p class="animate-O">Doa restu Anda adalah hadiah yang paling berarti bagi kami. Namun,
                                  jika Anda ingin memberikan lebih, dengan penuh syukur kami menerimanya.
                                   Terima kasih atas doa, cinta, dan kebaikan hati Anda.
                             </p>
-                            <!-- <button id="GiftButton" class="animate-O" style="background-color: #ffffff; border-radius: 5px; border: none;">Buka</button>
+                            <button id="GiftButton" class="animate-O" style="background-color: #ffffff; border-radius: 5px; border: none;">Buka</button>
                             <div id="hiddenContent" class="text-center gift-area" style="border: 1px solid #ffffff; border-radius: 7px; margin: 2rem; padding: 1rem;">
                                 <h3>Bank BCA</h3>
                                 <p><span id="no-rek1">31341421</span> a. n. Ainul Yaqin</p>
@@ -298,11 +295,18 @@
                                 <h3>Bank BCA</h3>
                                 <p><span id="no-rek1">31341421</span> a. n. Ainul Yaqin</p>
                                 <button onclick="CopyToClipboard()"  style="background-color: #ffffff; border-radius: 5px; border: none;">salin</button>
-                            </div> -->
+                            </div>
+                        <!-- </div> -->
                     </div>
+                    <!-- <div class="position-relative z-2 animate-fadeIn " style=" margin-left: 10%; padding-bottom: 10rem;">
+                        <div class="d-flex justify-content-between" style=" overflow-x: clip;">
+                            <img src="img/animate/bunga4.png" alt="decoration3" width="" class="position-absolute" style="bottom: 0; left: -10%; width: 100%; transform: scaleX(-1);">
+                            <img src="img/animate/bunga4.png" alt="decoration3" width="" class="position-absolute" style="bottom: 0; width: 100%;">
+                        </div>
+                    </div> -->
                 </div>
-                <button onclick="togleMute()" class="btn" style="border: none; position: fixed; bottom: 5rem; left: 2rem; z-index: 2;">
-                    <i class="bi bi-play-circle-fill" style="font-size: 3rem; color: white; "></i>
+                <button onclick="togleMute()" class="btn" style=" position: fixed; bottom: 5rem; left: 2rem; z-index: 2;">
+                    <i class="bi bi-play-circle-fill" style="font-size: 3rem; "></i>
                 </button>
             </section>
             
@@ -406,9 +410,9 @@
     <!-- countdown -->
     <script>
         simplyCountdown('.simply-countdown', {
-            year: 2024, // required
+            year: 2025, // required
             month: 10, // required
-            day: 10, // required
+            day: 25, // required
             hours: 0, // Default is 0 [0-23] integer
             minutes: 0, // Default is 0 [0-59] integer
             seconds: 0, // Default is 0 [0-59] integer
@@ -535,7 +539,7 @@
     </script>
 
     <!-- gift area -->
-     <!-- <script>
+     <script>
         document.getElementById('GiftButton').addEventListener('click', function(){
             var content = document.getElementById('hiddenContent')
 
@@ -547,6 +551,6 @@
                 this.textContent = 'Tutup';  // Mengubah teks tombol menjadi "Tutup Konten"
             }
         })
-     </script> -->
+     </script>
 </body>
 </html>

@@ -7,13 +7,15 @@ body{
     font-family: "Tinos", system-ui;
     /* overflow: auto; */
     /* background-color: brown; */
-    background-image: url(img/b.png);
+    background-image: url(img/bg-image.jpg);
     background-size: cover; /* Membuat gambar memenuhi seluruh background */
     background-position: center; /* Menempatkan gambar di tengah */
     background-repeat: no-repeat; 
-    overflow:auto;
 }
+.wrapper{
+    display: grid;
 
+}
 /* .opened{
     width: auto;
     height: auto;
@@ -28,7 +30,7 @@ body{
     background-position: center; */
     /* backdrop-filter: brightness(20%); */
     /* z-index: 2; */
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
 }
 .bg-opened >img{
     z-index: 2;
