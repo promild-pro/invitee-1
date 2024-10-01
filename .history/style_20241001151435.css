@@ -20,7 +20,7 @@ body{
     /* background: cover;
     background-position: center; */
     /* backdrop-filter: brightness(20%); */
-    /* z-index: 2; */
+    z-index: 2;
 }
 .bg-opened >img{
     z-index: 2;

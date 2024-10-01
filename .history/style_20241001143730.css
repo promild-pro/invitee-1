@@ -5,7 +5,7 @@
 }
 body{
     font-family: "Tinos", system-ui;
-    /* overflow: auto; */
+    overflow: auto;
 }
 .wrapper{
     display: grid;
@@ -13,14 +13,13 @@ body{
 }
 
 .bg-opened{
-    /* background-color: rgb(123, 143, 52);
-    
-    height: 100vh; */
+    background-color: rgb(123, 143, 52);
+
+    height: 100vh;
     /* position: relative; */
     /* background: cover;
     background-position: center; */
     /* backdrop-filter: brightness(20%); */
-    /* z-index: 2; */
 }
 .bg-opened >img{
     z-index: 2;
@@ -66,7 +65,7 @@ body{
     z-index: 2;
     background-color: rgb(64, 90, 3);
     width: 60%;
-    padding: 2%;
+    padding: 1rem;
     border-radius: 10px;
 }
 

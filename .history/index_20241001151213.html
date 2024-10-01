@@ -161,14 +161,14 @@
     <!-- Konten undangan untuk mobile -->
     <main class="opened" id="opened">
         <main class="d-grid">
-            <section class="text-center overflow-x-hidden d-flex align-items-center z-2" style="height: 100vh; background-color:  rgb(123, 143, 52);">
+            <section class="text-center overflow-x-hidden d-flex align-items-center" style="height: 100vh; background-color:  rgb(123, 143, 52);">
                 <div class="bg-opened">
                     <p>The Wedding of</p>
                 <img src="img/hero.png" alt="hero" class="w-50 bg-gradient z-2 border border-2 rounded-5 ">
                 <h2>Yaqin & Safira</h2>
                 <div class="position-relative z-2 text-white row justify-content-center ">
                     <p>Kepada Yth.</p>
-                    <h4 class="people-invite" id="nama-tamu">Tamu Undangan</h4>
+                    <h4 class="people-invite">Tamu Undangan</h4>
                     <p>Di Tempat</p>
                     <a href="#home" onclick="onNavbar()" id="see-invitation" class="d-flex w-50 justify-content-center align-items-center btn btn-open ">
                         <i class="bi bi-envelope-open"></i>
@@ -305,7 +305,7 @@
                         </div>
                     </div> -->
                 </div>
-                <button onclick="togleMute()" class="" style=" position: fixed; bottom: 5rem; left: 2rem; z-index: 1;">Audio</button>
+                <button onclick="togleMute()" class="" style=" position: fixed; bottom: 2;">Audio</button>
             </section>
             
         
@@ -354,7 +354,6 @@
             const audio = document.getElementById('backsound');
             if(audio.muted){
                 audio.muted = false
-                playMusic()
             } else {
                 audio.muted = true
             }
@@ -451,26 +450,6 @@
         window.onscroll = onNavbar
 
      </script>
-
-     <!-- Name From Url -->
-    <script>
-        function getguestName() {
-            const urlParams = new URLSearchParams(window.location.search)
-            const guestName = urlParams.get('to')
-            if(guestName) {
-                return decodeURIComponent(guestName)
-            }
-            return null
-        }
-
-        function displayGuestName () {
-            const guestName = getguestName()
-            if (guestName) {
-                document.getElementById('nama-tamu').textContent = guestName
-            }
-        }
-        window.addEventListener('DOMContentLoaded', displayGuestName)
-    </script>
 
      <!-- Animate muncul  -->
      <script>

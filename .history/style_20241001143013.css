@@ -5,7 +5,7 @@
 }
 body{
     font-family: "Tinos", system-ui;
-    /* overflow: auto; */
+    overflow: auto;
 }
 .wrapper{
     display: grid;
@@ -13,20 +13,19 @@ body{
 }
 
 .bg-opened{
-    /* background-color: rgb(123, 143, 52);
-    
-    height: 100vh; */
+    background-color: rgb(123, 143, 52);
+
+    height: 100vh;
     /* position: relative; */
     /* background: cover;
     background-position: center; */
     /* backdrop-filter: brightness(20%); */
-    /* z-index: 2; */
 }
 .bg-opened >img{
     z-index: 2;
     position: relative;
-    /* margin-top: 3rem;
-    margin-bottom: 4rem; */
+    padding-top: 3rem;
+    padding-bottom: 4rem;
 }
 .bg-opened::after{
     content: '';
@@ -42,8 +41,7 @@ body{
     font-style: italic;
     font-weight: 700;
     font-size: 1.5rem;
-    padding-top: 5%;
-    padding-bottom: 7%;
+    padding-top: 2rem;
     color: white;
     letter-spacing: 3px;
    
@@ -52,13 +50,12 @@ body{
  .bg-opened >h2{
     /* margin-top: 0rem; */
     z-index: 2;
-    padding-top: 8%;
     position: relative;
     display: inline-block;
     text-shadow: 1px 1px white;
     font-family:  'sacramento';
     font-weight: bold;
-    font-size: 3rem;
+    font-size3rem;
     color: rgb(114, 160, 7);
 
 }
@@ -66,7 +63,7 @@ body{
     z-index: 2;
     background-color: rgb(64, 90, 3);
     width: 60%;
-    padding: 2%;
+    padding: 1rem;
     border-radius: 10px;
 }
 
