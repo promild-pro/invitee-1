@@ -39,6 +39,7 @@ body{
 .wrap-open{
     min-height: 100vh ;
     height: 100dvh;
+
     background-color:  rgb(123, 143, 52);
 }
 .wrap-open::after{

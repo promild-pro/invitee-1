@@ -1,6 +1,6 @@
 :root{
     /* --font : color#ffff */
-    --vh: 100vh
+    --vh : 100%
 }
 body{
     padding: 0;
@@ -8,9 +8,12 @@ body{
     font-family: "Tinos", system-ui;
     /* overflow: auto; */
     /* background-color: brown; */
-    
+    background-image: url(img/b.png);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
     /* overflow:auto; */
-    /* height: calc(var(--vh, 1vh) * 100); */
+    height: calc(var(--vh, 1vh) * 100);
 
 }
 
@@ -37,9 +40,7 @@ body{
     margin-bottom: 4rem; */
 }
 .wrap-open{
-    min-height: 100vh ;
-    height: 100dvh;
-    background-color:  rgb(123, 143, 52);
+    height: ;
 }
 .wrap-open::after{
     content: '';

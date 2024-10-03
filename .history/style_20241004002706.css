@@ -1,6 +1,6 @@
 :root{
     /* --font : color#ffff */
-    --vh: 100vh
+    --vh : 100vh
 }
 body{
     padding: 0;
@@ -37,8 +37,8 @@ body{
     margin-bottom: 4rem; */
 }
 .wrap-open{
-    min-height: 100vh ;
-    height: 100dvh;
+    height: var(--vh) ;
+
     background-color:  rgb(123, 143, 52);
 }
 .wrap-open::after{
