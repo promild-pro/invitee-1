@@ -341,8 +341,13 @@
         // Fungsi untuk mengaktifkan scroll setelah tombol ditekan
         function enableScroll() {
           document.body.style.overflow = 'auto';
-          document.querySelector('.wrap-open').style.height = '100vh';
-        //   document.get
+          //   document.get
+        }
+        function wrapOpen() {
+            const wrapOpen = document.querySelector('.wrap-open');
+            
+            wrapOpenElement.style.height = '100vh';
+
         }
         function playMusic() {
             const audio = document.getElementById('backsound');
@@ -367,16 +372,17 @@
           // Aktifkan scroll
           enableScroll();
           playMusic()
-        
+          wrapOpen()
+          
           // Scroll ke bagian undangan dengan animasi halus
           window.scrollTo({
-            top: document.getElementById('home').offsetTop,
-            behavior: 'smooth'
-          });
+              top: document.getElementById('home').offsetTop,
+              behavior: 'smooth'
+            });
         });
         window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
-            enableScroll();
+            if (event.persisted) {
+                enableScroll();
         }
     });
     </script>
